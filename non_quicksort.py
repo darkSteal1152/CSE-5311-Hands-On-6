@@ -81,3 +81,31 @@ plt.title('Quicksort Runtime Analysis')
 plt.legend()
 plt.grid(True)
 plt.show()
+
+#def quicksort(arr, p, r):          // Expressed as 2T(n / 2) + O(partition)
+#    if p < r:                      // O(1) per call
+#        q = partition(arr, p, r)   //
+#        quicksort(arr, p, q - 1)   // average case results in T(n / 2)
+#        quicksort(arr, q + 1, r)   // average case results in T(n / 2)
+
+#def partition(arr, p, r):          // Dominated by O(n)
+#    pivot_index = r                // O(1)
+#    pivot = arr[pivot_index]       // O(1)
+
+#    i = p - 1                      // O(1)
+#   for j in range(p, r):           // worst case is O(n -1)
+#        if arr[j] <= pivot:        // O(1)
+#            i += 1                 // O(1)
+#            temp = arr[i]          // swap is O(1)
+#            arr[i] = arr[j]
+#            arr[j] = temp
+
+#    temp = arr[i + 1]              // swap is O(1)
+#    arr[i + 1] = arr[r]
+#    arr[r] = temp
+
+#    return i + 1                   // O(1)
+
+# Complete Complexity is 2T(n / 2) + O(n)
+# relation corresponds to   O(nlogn) at average case
+#                           O(n^2) at worst case
