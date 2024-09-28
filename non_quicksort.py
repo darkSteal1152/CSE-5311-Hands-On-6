@@ -27,26 +27,19 @@ def partition(arr, p, r):
     return i + 1
 
 def unsort_array(arr):
-    # Base case: if the array has 0 or 1 element, return it as-is
     if len(arr) <= 1:
         return arr
 
-    # Find the middle index
     mid_index = len(arr) // 2
-    # Get the middle element
     middle = arr[mid_index]
-    # Remove the middle element from the array
     arr = arr[:mid_index] + arr[mid_index+1:]
 
-    # Split into two subarrays
     min_subarray = arr[:len(arr) // 2]  # First half
     max_subarray = arr[len(arr) // 2:]  # Second half
 
-    # Recursively apply the process to the min and max subarrays
     min_result = unsort_array(min_subarray)
     max_result = unsort_array(max_subarray)
 
-    # Return the result by placing the middle element at the end
     return min_result + max_result + [middle]
 
 def generate_best_case(n):
